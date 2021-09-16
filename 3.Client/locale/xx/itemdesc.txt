@@ -1,0 +1,1 @@
+71189	Enchant Item+	Removes the bonuses from one of your items and adds new ones. You will see a preview of the new bonuses, and then you can decide whether you wish to accept the displayed bonuses. Only applies to bonuses 1-5.

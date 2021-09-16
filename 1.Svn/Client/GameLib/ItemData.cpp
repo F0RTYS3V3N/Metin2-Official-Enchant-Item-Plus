@@ -1,0 +1,9 @@
+//Find
+		case USE_PUT_INTO_RING_SOCKET:
+			return DEF_STR(USE_PUT_INTO_RING_SOCKET);
+
+///Add
+#if defined(__BL_SELECT_ATTR__)
+		case USE_SELECT_ATTRIBUTE:
+			return DEF_STR(USE_SELECT_ATTRIBUTE);
+#endif

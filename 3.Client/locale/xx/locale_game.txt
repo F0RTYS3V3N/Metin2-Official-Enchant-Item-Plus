@@ -1,0 +1,3 @@
+SELECT_ATTR_NOTICE	You cannot open a private shop whilst using Enchant Item+.
+SELECT_ATTR_NOT_OPEN	You cannot use Enchant Item+ whilst you have a private shop open.
+SELECT_ATTR_NOT_SELECT	Decide whether you want to keep the bonuses or swap them.
