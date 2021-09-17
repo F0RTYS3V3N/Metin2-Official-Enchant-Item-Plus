@@ -76,7 +76,8 @@ void CItem::GetSelectAttr(TPlayerItemAttribute(&arr)[ITEM_ATTRIBUTE_MAX_NUM])
 		if (bLevel > r.bMaxLevelBySet[iAttributeSet])
 			bLevel = r.bMaxLevelBySet[iAttributeSet];
 
-		arr[__GetAttributeCount()] = { static_cast<BYTE>(attr_idx), static_cast<short>(bLevel) };
+		const long lVal = r.lValues[MIN(4, bLevel - 1)];
+		arr[__GetAttributeCount()] = { static_cast<BYTE>(attr_idx), static_cast<short>(lVal) };
 	};
 
 	if (m_pProto && m_pProto->sAddonType)
