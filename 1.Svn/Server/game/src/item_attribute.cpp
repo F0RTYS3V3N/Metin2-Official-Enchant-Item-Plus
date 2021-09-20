@@ -13,9 +13,12 @@ void CItem::GetSelectAttr(TPlayerItemAttribute(&arr)[ITEM_ATTRIBUTE_MAX_NUM])
 
 	auto __HasAttr = [this, &arr](const BYTE bApply) -> bool
 	{
-		for (BYTE i = 0; i < ITEM_APPLY_MAX_NUM; ++i)
-			if (m_pProto->aApplies[i].bType == bApply)
-				return true;
+		if (m_pProto)
+		{
+			for (BYTE i = 0; i < ITEM_APPLY_MAX_NUM; ++i)
+				if (m_pProto->aApplies[i].bType == bApply)
+					return true;
+		}
 
 		for (BYTE i = 0; i < MAX_NORM_ATTR_NUM; ++i)
 			if (arr[i].bType == bApply)
