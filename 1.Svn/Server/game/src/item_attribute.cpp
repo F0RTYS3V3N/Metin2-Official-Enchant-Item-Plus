@@ -3,24 +3,24 @@
 #include "utils.h"
 void CItem::GetSelectAttr(TPlayerItemAttribute(&arr)[ITEM_ATTRIBUTE_MAX_NUM])
 {
-	auto __GetAttributeCount = [&arr]() -> BYTE
+	auto __GetAttributeCount = [&arr]() -> int
 	{
 		auto c = std::count_if(std::begin(arr), std::end(arr), 
 			[](const TPlayerItemAttribute& _attr) { return _attr.bType != 0 && _attr.sValue != 0; });
 
-		return static_cast<BYTE>(c);
+		return c;
 	};
 
 	auto __HasAttr = [this, &arr](const BYTE bApply) -> bool
 	{
 		if (m_pProto)
 		{
-			for (BYTE i = 0; i < ITEM_APPLY_MAX_NUM; ++i)
+			for (size_t i = 0; i < ITEM_APPLY_MAX_NUM; ++i)
 				if (m_pProto->aApplies[i].bType == bApply)
 					return true;
 		}
 
-		for (BYTE i = 0; i < MAX_NORM_ATTR_NUM; ++i)
+		for (size_t i = 0; i < MAX_NORM_ATTR_NUM; ++i)
 			if (arr[i].bType == bApply)
 				return true;
 
@@ -41,7 +41,7 @@ void CItem::GetSelectAttr(TPlayerItemAttribute(&arr)[ITEM_ATTRIBUTE_MAX_NUM])
 
 		int total = 0;
 
-		for (BYTE i = 0; i < MAX_APPLY_NUM; ++i)
+		for (size_t i = 0; i < MAX_APPLY_NUM; ++i)
 		{
 			const TItemAttrTable& r = g_map_itemAttr[i];
 
