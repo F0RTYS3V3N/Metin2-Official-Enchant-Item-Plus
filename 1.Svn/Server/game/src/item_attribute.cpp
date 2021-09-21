@@ -100,7 +100,7 @@ void CItem::GetSelectAttr(TPlayerItemAttribute(&arr)[ITEM_ATTRIBUTE_MAX_NUM])
 	for (BYTE c = __GetAttributeCount(); c < GetAttributeCount(); c++)
 	{
 		int iAttrLevelPercent = number(1, 100);
-		BYTE i;
+		size_t i;
 
 		for (i = 0; i < ITEM_ATTRIBUTE_MAX_LEVEL; ++i)
 		{
